@@ -28,7 +28,10 @@ def monkey_trouble(a_smile, b_smile):
     monkey_trouble(False, False) → True
     monkey_trouble(True, False) → False
     """
-    return
+
+    # return (a_smile and b_smile) or (not a_smile and not b_smile)
+    return a_smile == b_smile
+
 
 
 def sum_double(a, b):
@@ -40,7 +43,12 @@ def sum_double(a, b):
     sum_double(3, 2) → 5
     sum_double(2, 2) → 8
     """
-    return
+
+    # if a == b:
+    #     return 2 * (a + b)
+    # return a + b
+
+    return 2 * (a + b) if a == b else a + b
 
 
 def diff21(n):
