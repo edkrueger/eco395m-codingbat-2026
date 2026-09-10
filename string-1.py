@@ -33,7 +33,9 @@ def make_tags(tag, word):
     make_tags('i', 'Hello') → '<i>Hello</i>'
     make_tags('cite', 'Yay') → '<cite>Yay</cite>'
     """
-    return
+
+    # return '<' + tag + '>' + word + "</" + tag + '>'
+    return f'<{tag}>{word}</{tag}>'
 
 
 def make_out_word(out, word):
@@ -87,7 +89,7 @@ def first_half(str):
     first_half('HelloThere') → 'Hello'
     first_half('abcdef') → 'abc'
     """
-    return
+    return str[:len(str) // 2]
 
 
 def without_end(str):
@@ -115,7 +117,15 @@ def combo_string(str1, str2):
     combo_string('aaa', 'b') → 'baaab'
 
     """
-    return
+
+    if len(str1) > len(str2):
+        long_ = str1
+        short_ = str2
+    else:
+        long_ = str2
+        short_ = str1
+
+    return  short_ + long_ + short_
 
 
 def non_start(str1, str2):

@@ -6,7 +6,8 @@ def first_last6(nums):
     first_last6([1, 2, 6]) → True
     first_last6([6, 1, 2, 3]) → True
     first_last6([13, 6, 1, 2, 3]) → False"""
-    return
+
+    return nums[0] == 6 or nums[-1] == 6
 
 
 def same_first_last(nums):
@@ -18,7 +19,16 @@ def same_first_last(nums):
     same_first_last([1, 2, 3]) → False
     same_first_last([1, 2, 3, 1]) → True
     same_first_last([1, 2, 1]) → True"""
-    return
+
+    # try:
+    #     nums[0] == nums[-1]
+    # except:
+    #     print(f"nums={nums}")
+
+    if not nums:
+        return False
+
+    return nums[0] == nums[-1]
 
 
 def make_pi():
@@ -39,7 +49,8 @@ def common_end(arr1, arr2):
     common_end([1, 2, 3], [7, 3]) → True
     common_end([1, 2, 3], [7, 3, 2]) → False
     common_end([1, 2, 3], [1, 3]) → True"""
-    return
+
+    return arr1[0] == arr2[0] or arr1[-1] == arr2[-1]
 
 
 def sum3(nums):

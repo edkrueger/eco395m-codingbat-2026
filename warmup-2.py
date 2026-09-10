@@ -6,7 +6,7 @@ def string_times(str, n):
     string_times('Hi', 3) → 'HiHiHi'
     string_times('Hi', 1) → 'Hi'
     """
-    return
+    return n * str
 
 
 def front_times(str, n):
@@ -27,7 +27,17 @@ def string_bits(str):
     string_bits('Hello') → 'Hlo'
     string_bits('Hi') → 'H'
     string_bits('Heeololeo') → 'Hello'"""
-    return
+    
+    # return str[::2]
+
+    out_str = ""
+
+    for i in range(len(str)):
+        if i % 2 == 0:
+            out_str = out_str + str[i]
+
+    return out_str
+
 
 
 def string_splosion(str):
@@ -58,7 +68,27 @@ def array_count9(nums):
     array_count9([1, 9, 9]) → 2
     array_count9([1, 9, 9, 3, 9]) → 3
     """
-    return
+
+    # out_nums = []
+
+    # for num in nums:
+    #     if num == 9:
+    #         out_nums.append(num)
+
+
+    # return len(out_nums)
+
+        # out_nums = []
+
+    count = 0
+    for num in nums:
+        if num == 9:
+            # count = count + 1
+            count += 1
+
+    return count
+
+
 
 
 def array_front9(nums):
@@ -87,14 +117,31 @@ def array123(nums):
 def string_match(str1, str2):
     """
 
-    Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+    Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+    So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
 
 
     string_match('xxcaazz', 'xxbaaz') → 3
     string_match('abc', 'abc') → 2
     string_match('abc', 'axc') → 0
     """
-    return
+
+
+    if len(str1) > len(str2):
+        longer = str1
+        shorter = str2
+    else:
+        longer = str2
+        shorter = str1
+
+
+    count = 0
+
+    for i in range(len(shorter) - 1):
+        if  longer[i] == shorter[i] and longer[i + 1] == shorter[i + 1]:
+            count += 1
+
+    return count
 
 
 if __name__ == "__main__":
